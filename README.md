@@ -1,2 +1,2 @@
-# python-soduku-solver
-A Python based soduku game solver using the backtracking algorithm
+# python-sudoku-solver
+A Python based sudoku game solver using the backtracking algorithm
