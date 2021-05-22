@@ -70,4 +70,26 @@ def valid(board, num, position):
 
     return True
     
+def solve(board):
+    nextSpace = findEmpty(board)
+
+    # if no empty spaces left on board, algorithm is complete
+    if not nextSpace:
+        return True
+
+    else:
+        row, col = nextSpace
+    
+    # Check through possible values for each position
+    for i in range(1, 10):
+        if valid(board, i, (row,col)):
+            board[row][col] = i
+
+            if solve(board):
+                return True
+            
+            board[row][col] = 0
+    
+    return False
+
 printBoard(board)
