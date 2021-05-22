@@ -31,4 +31,15 @@ def printBoard(board):
 
         print()
 
+def findEmpty(board):
+    rows = len(board)
+    cols = len(board[0])
+
+    for i in range(rows):
+        for j in range(cols):
+            if board[i][j] == 0:
+                return i, j     # row, col
+
+    return None
+
 printBoard(board)
