@@ -92,4 +92,14 @@ def solve(board):
     
     return False
 
+print("INITIAL BOARD")
+print("_______________")
+printBoard(board)
+
+print("\n\n")
+
+solve(board)
+
+print("SOLVED BOARD")
+print("_______________")
 printBoard(board)
