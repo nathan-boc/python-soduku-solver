@@ -42,4 +42,32 @@ def findEmpty(board):
 
     return None
 
+def valid(board, num, position):
+
+    rows = len(board)
+    cols = len(board[0])
+
+    currRow, currCol = position
+
+    # Check row
+    for i in range(cols):
+        if board[currRow][i] == num and i != currCol:
+            return False
+
+    # Check column
+    for i in range(rows):
+        if board[i][currCol] == num and i != currRow:
+            return False
+
+    # Check subgrid
+    subgrid_x = currCol // 3
+    subgrid_y = currRow // 3
+
+    for i in range(subgrid_y * 3, subgrid_y * 3 + 3):
+        for j in range(subgrid_x * 3, subgrid_x * 3 + 3):
+            if board[i][j] == num and (i, j) != (currRow, currCol):
+                return False
+
+    return True
+    
 printBoard(board)
