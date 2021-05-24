@@ -1,4 +1,5 @@
 import Board
+import GUI
 
 def main():
     board = [
@@ -12,6 +13,11 @@ def main():
         [0, 2, 5, 0, 8, 0, 9, 0, 0],
         [4, 0, 0, 0, 9, 7, 0, 0, 2]
     ]
+
+    gui = GUI.GUI()
+    gui.drawBoard()
+    gui.run()
+    
 
     game = Board.Board(board)
 
