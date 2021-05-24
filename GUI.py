@@ -8,7 +8,7 @@ class GUI:
 
         # Declaring object dimensions - width x height
         self.window_size = (800, 600)
-        self.tile_size = (60, 60)
+        self.tile_size = (50, 50)
         self.initial_board_pos = (50, 50)
 
         # Window title
@@ -49,5 +49,9 @@ class GUI:
     def drawBoard(self):
 
         X, Y = self.initial_board_pos
+        tile_X, tile_Y = self.tile_size
 
-        
+        for i in range(9):
+            for j in range(9):
+                tile = pygame.Rect((X + (j * tile_X), Y + (i * tile_Y)) + self.tile_size)
+                pygame_gui.elements.UIButton(relative_rect=tile, text=str(j + 1 + (i * 9)),manager=self.manager)
