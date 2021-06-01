@@ -189,7 +189,7 @@ def main():
     ]
 
     window = pygame.display.set_mode(window_size)
-    pygame.display.set_caption("Sudoku")
+    pygame.display.set_caption("Sudoku Solver")
     board = Grid(window, board)
     run = True
     while run:
